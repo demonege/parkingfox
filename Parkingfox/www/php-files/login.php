@@ -3,12 +3,19 @@ header('Access-Control-Allow-Origin: *');
 
 require('sql.php');
 
-$datas = $_GET;
+$where = $_GET;
 
-$datas['password'] = md5($datas['password']);
+$where['password'] = md5($where['password']);
+
+$table = 'user';
 
 $sql = new \sqlfunctions\sqlfunctions();
 
-$sql->insert($datas);
+$result = $sql->select($table,$where);
 
+if ($result != 'NULL') {
+    return true;
+} else {
+    return false;
+}
 ?>
