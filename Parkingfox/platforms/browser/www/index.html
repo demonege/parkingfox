@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
     Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
 
@@ -37,23 +37,49 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/application.css" />
     <title>Hello World</title>
+    <title>Access Side</title>
 </head>
 
 <body>
-    <div class="app">
-        <h1>Vagina</h1>
+
+    <div class="ground">
+    
+    </div>
+
+    <div class="parkingfox">
+        <h1>Parking Fox</h1>
+    </div>
+
+
+    <div class="app" onclick="window.open('../www/demo.html')">
+        <h1>Parkplatz </br> finden</h1>
         <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+            <p class="event listening"></p>
         </div>
+    </div>
+
+    <div class="app2" onclick="window.open('../www/demo.html')">
+        <h1>Parkplatz </br> anbieten</h1>
+        <div id="deviceready" class="blink"
+            <p class="event listening"></p>  
+        </div>
+    </div>
+    <div class="wip" onclick="window.open('../www/demo.html')"> <!-- What is Parkingfox = WIP -->
+       <h5>Was ist Parkingfox ?</h5>
+        
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        app.initialize();
+        app.initialize()
+
+        
     </script>
 </body>
 
