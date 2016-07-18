@@ -14,8 +14,8 @@ $sql = new \sqlfunctions\sqlfunctions();
 $result = $sql->select($table,$where);
 
 if ($result != 'NULL') {
-    return true;
+    return $result;
 } else {
-    return false;
+    return $result;
 }
 ?>
