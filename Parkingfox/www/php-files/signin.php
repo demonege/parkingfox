@@ -13,7 +13,15 @@ $table = 'user';
 
 $sql = new \sqlfunctions\sqlfunctions();
 
-$sql->insert($datas,$table);
+$result = $sql->insert($datas,$table);
 
-return true;
-?>
+if($result)
+{
+    $where['email'] = $datas['email'];
+    $uid = $sql->select($table,$where,'id');
+    echo $uid[0];
+}
+else
+{
+    echo 'false';
+}

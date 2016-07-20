@@ -14,8 +14,8 @@ $sql = new \sqlfunctions\sqlfunctions();
 $result = $sql->select($table,$where);
 
 if ($result != 'NULL') {
-    return $result;
+    $uid = $result[0];
+    echo $uid;
 } else {
-    return $result;
+    echo 'false';
 }
-?>
