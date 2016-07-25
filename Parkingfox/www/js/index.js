@@ -45,6 +45,15 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    /* Set the width of the side navigation to 250px */
+    openNav: function() {
+        document.getElementById("mySidenav").style.width = "200px";
+    },
+
+    /* Set the width of the side navigation to 0 */
+    closeNav: function() {
+        document.getElementById("mySidenav").style.width = "0";
     }
 
     
