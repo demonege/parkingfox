@@ -37,7 +37,18 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- Include the jQuery library -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Include the jQuery Mobile library -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Access Side</title>
@@ -45,7 +56,7 @@
 
 <body>
 
-    <div class="ground">
+    <div class="ground" onclick="app.openNav()">
     
     </div>
 
@@ -67,17 +78,41 @@
             <p class="event listening"></p>  
         </div>
     </div>
-    <div class="wip" onclick="window.open('../www/demo.html')"> <!-- What is Parkingfox = WIP -->
-       <h5>Was ist Parkingfox ?</h5>
-        
+    <div data-role="page" id="pageone">
+        <div data-role="main" class="ui-content">
+            <button class="ui-btn ui-icon-info ui-btn-icon-left">Was ist Parkingfox ?</button>
+           
+        </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize()
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="app.closeNav()">&times;</a>
+            <button class="buttonsidebar" onclick="window.open('../www/demo.html')">Über Uns</button><br /><br />
+            <button class="buttonsidebar" onclick="window.open('../www/demo.html')">Dienste</button><br /><br />
+            <button class="buttonsidebar" onclick="window.open('../www/demo.html')">Profil</button><br /><br />
+            <button class="buttonsidebar">Kontakt</button><br /><br />
+            <button class="buttonsidebar">Impressum</button>
+        </div>
 
-        
-    </script>
+        <!-- Use any element to open the sidenav -->
+        <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+        <div id="main">
+            ...
+        </div>
+        <script type="text/javascript">
+            $("div").on("swiperight", function () {
+                app.openNav();
+            });
+            $("div").on("swipeleft", function () {
+                app.closeNav();
+            });
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize()
+
+
+        </script>
 </body>
 
 </html>
