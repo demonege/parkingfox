@@ -23,7 +23,7 @@ function CallService(url,responseElement,islogin)
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            //responseElement.innerHTML = xhttp.responseText;
+            responseElement.innerHTML = xhttp.responseText;
             var response = xhttp.response;
             if(response != 'false' && islogin)
             {
@@ -66,7 +66,8 @@ function checkIfLogin(cookie)
     {
         var login = window.localStorage.getItem("login");
         var uid = window.localStorage.getItem("uid");
-        if (login == 'true' && !isNaN(uid)) {
+        if (login == 'true') {
+            CallService();
             return true;
         }
     }

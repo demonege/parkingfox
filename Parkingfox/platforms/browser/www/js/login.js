@@ -1,6 +1,6 @@
 var url = 'http://192.168.0.11/php-files/signin.php';
 var url1 = 'http://192.168.0.11/php-files/login.php';
-var data = '?lastname=Langlitz&firstname=Maurice&email=demonege@web.de&password=test1337'; // dynamisch aus formular
+var data = '?lastname=Langlitz&firstname=Maurice&email=demoege@web.de&password=test1337'; // dynamisch aus formular
 var data1 = '?email=demonege@web.de&password=test1337'; // dynamisch aus formular
 
 var signin = url + data;
@@ -24,9 +24,10 @@ function CallService(url,responseElement,islogin)
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             responseElement.innerHTML = xhttp.responseText;
-            if(islogin)
+            var response = xhttp.response;
+            if(response != 'false' && islogin)
             {
-                setStorageItem();
+                setStorageItem(response);
             }
         }
     };
@@ -44,9 +45,10 @@ function setCokie()
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
 
-function setStorageItem()
+function setStorageItem(uid)
 {
     window.localStorage.setItem("login", "true");
+    window.localStorage.setItem("uid", uid);
 }
 
 function checkIfLogin(cookie)
@@ -63,7 +65,9 @@ function checkIfLogin(cookie)
     else
     {
         var login = window.localStorage.getItem("login");
-        if (login == true) {
+        var uid = window.localStorage.getItem("uid");
+        if (login == 'true') {
+            CallService();
             return true;
         }
     }
