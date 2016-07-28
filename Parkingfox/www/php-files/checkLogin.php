@@ -6,8 +6,12 @@ $sql = new \sqlfunctions\sqlfunctions();
 
 $datas = $_GET;
 
-$where = 'identifire = '
-
 $table = 'user';
 
-$result = $sql->select($table,$where);
+$result = $sql->select($table,$datas);
+
+if ($result) {
+    echo 'true';
+} else {
+    echo 'false';
+}

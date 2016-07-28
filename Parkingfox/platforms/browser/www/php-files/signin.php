@@ -19,7 +19,7 @@ if($result)
 {
     $where['email'] = $datas['email'];
     $uid = $sql->select($table,$where,'identifire');
-    return($uid[0]);
+    echo($uid[0]);
 }
 else
 {

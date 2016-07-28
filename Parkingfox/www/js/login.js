@@ -1,6 +1,7 @@
 var url = 'http://192.168.0.11/php-files/signin.php';
 var url1 = 'http://192.168.0.11/php-files/login.php';
-var data = '?lastname=Langlitz&firstname=Maurice&email=demoege@web.de&password=test1337'; // dynamisch aus formular
+var url2 = 'http://192.168.0.11/php-files/checkLogin.php';
+var data = '?lastname=Langlitz&firstname=Maurice&email=demonege@web.de&password=test1337'; // dynamisch aus formular
 var data1 = '?email=demonege@web.de&password=test1337'; // dynamisch aus formular
 
 var signin = url + data;
@@ -9,13 +10,19 @@ var login = url1 + data1;
 
 document.getElementById("login-test").onclick = function() {CallService(login,document.getElementById("login-box"),true)};
 document.getElementById("login-test1").onclick = function() {CallService(signin,document.getElementById("login-box"),true)};
+document.getElementById("login-test3").onclick = function() {checkIfLogin(false)};
 //document.getElementById("login-test2").onclick = function() {CallService(parking,document.getElementById("parking"))};
 
 //END DEBUG
 
 
 //on document load test
-checkIfLogin(false);
+
+if(checkIfLogin(false)) {
+    console.log(true);
+} else {
+    console.log(false)
+}
 
 
 function CallService(url,responseElement,islogin)
@@ -23,11 +30,15 @@ function CallService(url,responseElement,islogin)
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            responseElement.innerHTML = xhttp.responseText;
             var response = xhttp.response;
             if(response != 'false' && islogin)
             {
                 setStorageItem(response);
+            }
+            if(response != 'false' && !islogin) {
+                responseElement.innerHTML = 'true';
+            } else {
+                responseElement.innerHTML = 'false';
             }
         }
     };
@@ -49,6 +60,9 @@ function setStorageItem(uid)
 {
     window.localStorage.setItem("login", "true");
     window.localStorage.setItem("uid", uid);
+
+    alert(window.localStorage.getItem("login"));
+    alert(window.localStorage.getItem("uid"));
 }
 
 function checkIfLogin(cookie)
@@ -64,12 +78,23 @@ function checkIfLogin(cookie)
     }
     else
     {
+
         var login = window.localStorage.getItem("login");
         var uid = window.localStorage.getItem("uid");
-        if (login == 'true') {
-            CallService();
+
+        //anpassungen prüfen des zweiten stroafe objects
+        if(login == 'true')
+        {
             return true;
+        } else {
+            return false;
         }
     }
+}
 
+function islogin()
+{
+    var data2 = '?identifire=' + uid;
+    var service = url2 + data2;
+    CallService(service,document.getElementById("identifire"),false);
 }
