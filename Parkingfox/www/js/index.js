@@ -49,11 +49,16 @@ var app = {
     /* Set the width of the side navigation to 250px */
     openNav: function() {
         document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("pageone").style.marginLeft = "200px";
+        document.body.style.backgroundColor = "rgba(0,0,0,10)";
+        
     },
 
     /* Set the width of the side navigation to 0 */
     closeNav: function() {
         document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("pageone").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
     }
 
     

@@ -84,6 +84,17 @@ body {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
+.ui-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -106,14 +117,16 @@ body {
 
 .ground {
     background: url(../img/city.png) no-repeat left top;
-    position: absolute;
+    position: relative;
     height: 569px;
     width: 320px;
+    padding-left: -5000px;
+    padding-top: inherit;
 }
 
 h1 {
     font-size:24px;
-    color: white;
+    color: black;
     font-weight:normal;
     margin:0px;
     overflow:visible;
@@ -165,7 +178,7 @@ h5{
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background: silver;/*url(../img/city.png) no-repeat left top;  Black*/
+    background: lightgray;/*url(../img/city.png) no-repeat left top;  Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -180,7 +193,9 @@ h5{
     display: block;
     transition: 0.3s
 }
-
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
 
 
 /* Position and style the close button (top right corner) */
@@ -196,6 +211,16 @@ h5{
 #main {
     transition: margin-left .5s;
     padding: 20px;
+}
+img {
+    -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+    filter: blur(3px);
+    position: relative;
+    height: 525px;
+    width: 350px;
+    padding-left: -50px;
+    padding-top: inherit;
+    
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
