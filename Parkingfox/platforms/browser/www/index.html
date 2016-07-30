@@ -1,121 +1,89 @@
 ﻿<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <!-- Include meta tag to ensure proper rendering and touch zooming -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Include jQuery Mobile stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
     <!-- Include the jQuery library -->
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+    <script src="../www/js/jquery-1.11.3.min.js"></script>
     <!-- Include the jQuery Mobile library -->
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-
+    <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/application.css" />
-    <title>Hello World</title>
     <title>Access Side</title>
-</head>
-
-<body>
-
-    <div class="ground" onclick="app.openNav()">
-    
-    </div>
-
-    <div class="parkingfox">
-        <h1>Parking Fox</h1>
-    </div>
-
-
-    <div class="app" onclick="window.open('../www/demo.html')">
-        <h1>Parkplatz </br> finden</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening"></p>
-        </div>
-    </div>
-
-    <div class="app2" onclick="window.open('../www/demo.html')">
-        <h1>Parkplatz </br> anbieten</h1>
-        <div id="deviceready" class="blink"
-            <p class="event listening"></p>  
-        </div>
-    </div>
-    <div data-role="page" id="pageone">
-        <div data-role="main" class="ui-content">
-            <button class="ui-btn ui-icon-info ui-btn-icon-left">Was ist Parkingfox ?</button>
-           
-        </div>
-    </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="app.closeNav()">&times;</a>
-            <button class="buttonsidebar" onclick="window.open('../www/demo.html')">Über Uns</button><br /><br />
-            <button class="buttonsidebar" onclick="window.open('../www/demo.html')">Dienste</button><br /><br />
-            <button class="buttonsidebar" onclick="window.open('../www/demo.html')">Profil</button><br /><br />
-            <button class="buttonsidebar">Kontakt</button><br /><br />
-            <button class="buttonsidebar">Impressum</button>
-        </div>
-
-        <!-- Use any element to open the sidenav -->
-        <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-        <div id="main">
-            ...
-        </div>
-        <script type="text/javascript">
+    <script type="text/javascript">
+        $(document).on("pagecreate", "#pageone", function () {
             $("div").on("swiperight", function () {
                 app.openNav();
             });
-            $("div").on("swipeleft", function () {
+            $("div").on("swipe", function () {
                 app.closeNav();
             });
-        </script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize()
+        });
+    </script>
+</head>
+<body>
+    <!-- Mainpage -->
+    <div data-role="page" id="pageone" class="pageone">
+        <div data-role="header" data-position="fixed">
+            <br />
+            <h1>Parkingfox</h1>
+            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
+            <a href="#Login" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Login</a>
+            <div data-role="popup" id="Login" data-position-to="window" class="ui-content">
+                <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <h1>Bitte Loggen sie sich ein</h1>
+                <label>Name:</label><input type="text" />
+                <label>Passwort:</label><input type="password" />
+                <button type="submit">Anmelden</button><a href="#pageRegister">Jetzt regestrieren !</a>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <img src="../www/img/city.png" />
+            <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript">app.initialize()</script>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <a href="#Wip" data-rel="popup" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-left">Was ist Parkingfox?</a>
+            <div data-role="popup" id="Wip" data-position-to="window" class="ui-content">
+                <video width="250" autoplay controls>
+                    <source src="../www/img/mov_bbb.mp4" type="video/mp4">
+                    <source src="../www/img/mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+    </div>
+    <!--Sidenavigationbar-->
+    <div data-role="navbar" id="pagetwo" class="pagetwo">
+        <div data-role="header">
+            <h1></h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="app.closeNav()">&times;</a>
+                <button class="buttonsidebar">Über Uns</button><br /><br />
+                <button class="buttonsidebar">Dienste</button><br /><br />
+                <button class="buttonsidebar">Profil</button><br /><br />
+                <button class="buttonsidebar">Kontakt</button><br /><br />
+                <button class="buttonsidebar">Impressum</button>
+            </div>
+        </div>
+        <div data-role="footer">
+            <h1></h1>
+        </div>
+    </div>
+    <!--Page three-->
 
+    <div data-role="page" id="pageThree">
+        <div data-role="header">
+            <h1></h1>
+        </div>
+        <div data-role="main">
 
-        </script>
+        </div>
+        <div data-role="footer">
+
+        </div>
+    </div>
 </body>
-
 </html>
