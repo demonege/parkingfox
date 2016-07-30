@@ -1,35 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Include jQuery Mobile stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- Include the jQuery library -->
     <script src="../www/js/jquery-1.11.3.min.js"></script>
-    <!-- Include the jQuery Mobile library -->
     <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/application.css" />
-=======
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    
-
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
->>>>>>> origin/services
     <title>Access Side</title>
     <script type="text/javascript">
         $(document).on("pagecreate", "#pageone", function () {
@@ -58,6 +36,7 @@
                 <button type="submit">Anmelden</button><a href="#pageRegister">Jetzt regestrieren !</a>
             </div>
         </div>
+
         <div data-role="main" class="ui-content">
             <img src="../www/img/city.png" />
             <script type="text/javascript" src="js/index.js"></script>
@@ -66,7 +45,7 @@
         <div data-role="footer" data-position="fixed">
             <a href="#Wip" data-rel="popup" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-left">Was ist Parkingfox?</a>
             <div data-role="popup" id="Wip" data-position-to="window" class="ui-content">
-                <video width="250" autoplay controls>
+                <video width="250" controls>
                     <source src="../www/img/mov_bbb.mp4" type="video/mp4">
                     <source src="../www/img/mov_bbb.ogg" type="video/ogg">
                     Your browser does not support HTML5 video.
@@ -74,34 +53,27 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <!--Sidenavigationbar-->
     <div data-role="navbar" id="pagetwo" class="pagetwo">
         <div data-role="header">
             <h1></h1>
         </div>
-        <div data-role="main" class="ui-content">
+    <div data-role="main" class="ui-content">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="app.closeNav()">&times;</a>
-                <button class="buttonsidebar">Über Uns</button><br /><br />
-                <button class="buttonsidebar">Dienste</button><br /><br />
+                <a href="#pageThree" class="buttonsidebar" >Über Uns</a><br /><br />
+                <a href="#pageThree" class="buttonsidebar">Dienste</a><br /><br />
                 <button class="buttonsidebar">Profil</button><br /><br />
                 <button class="buttonsidebar">Kontakt</button><br /><br />
                 <button class="buttonsidebar">Impressum</button>
             </div>
-        </div>
-        <div data-role="footer">
+     </div>
+     <div data-role="footer">
             <h1></h1>
         </div>
-=======
-
-    <div class="parkingfox">
-        <a href="login.html"><h1>Parking Fox</h1></a>
->>>>>>> origin/services
     </div>
     <!--Page three-->
-
-    <div data-role="page" id="pageThree">
+   <div data-role="page" id="pageThree">
         <div data-role="header">
             <h1></h1>
         </div>
@@ -110,13 +82,6 @@
         </div>
         <div data-role="footer">
 
-<<<<<<< HEAD
-=======
-    <div class="app2" onclick="window.open('../www/demo.html')">
-        <h1>Parkplatz </br> anbieten</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening"></p>  
->>>>>>> origin/services
         </div>
     </div>
 </body>

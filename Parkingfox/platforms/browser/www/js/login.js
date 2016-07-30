@@ -81,20 +81,12 @@ function checkIfLogin(cookie)
 
         var login = window.localStorage.getItem("login");
         var uid = window.localStorage.getItem("uid");
-        if (login == 'true')
+
+        //anpassungen prüfen des zweiten stroafe objects
+        if(login == 'true')
         {
-            var data2 = '?identifire=dkjsafhk2132' //+ uid;
-            var service = url2 + data2;
-            CallService(service,document.getElementById("identifire"),false);
-            setTimeout(islogin,3000);
-            if (document.getElementById("identifire").innerHTML == 'true') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        else
-        {
+            return true;
+        } else {
             return false;
         }
     }
@@ -102,4 +94,7 @@ function checkIfLogin(cookie)
 
 function islogin()
 {
+    var data2 = '?identifire=' + uid;
+    var service = url2 + data2;
+    CallService(service,document.getElementById("identifire"),false);
 }

@@ -2,16 +2,19 @@
 header('Access-Control-Allow-Origin: *');
 
 require('sql.php');
+
 $sql = new \sqlfunctions\sqlfunctions();
 
 $datas = $_GET;
 
-$table = 'user';
+$table = 'parking';
 
-$result = $sql->select($table,$datas);
+$where = $datas;
+
+$result = $sql->select($table,$where,'*');
 
 if ($result) {
-    echo 'true';
+    echo $result;
 } else {
     echo 'false';
 }
