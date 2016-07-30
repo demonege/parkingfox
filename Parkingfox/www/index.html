@@ -5,9 +5,9 @@
     <!-- Include jQuery Mobile stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- Include the jQuery library -->
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../www/js/jquery-1.11.3.min.js"></script>
     <!-- Include the jQuery Mobile library -->
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/application.css" />
     <title>Access Side</title>
@@ -16,9 +16,6 @@
             $("div").on("swiperight", function () {
                 app.openNav();
             });
-            /*$("div").on("tap", function () {
-                app.closeNav();
-            });*/
             $("div").on("swipe", function () {
                 app.closeNav();
             });
@@ -26,6 +23,7 @@
     </script>
 </head>
 <body>
+    <!-- Mainpage -->
     <div data-role="page" id="pageone">
         <div data-role="header" data-position="fixed">
             <br />
@@ -40,11 +38,8 @@
                 <button type="submit">Anmelden</button><a href="#pageRegister">Jetzt regestrieren !</a>
             </div>
         </div>
-
         <div data-role="main" class="ui-content">
             <img src="../www/img/city.png" />
-
-            <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
             <script type="text/javascript">app.initialize()</script>
         </div>
@@ -59,6 +54,7 @@
             </div>
         </div>
     </div>
+    <!--Sidenavigationbar-->
     <div data-role="navbar" id="pagetwo">
         <div data-role="header">
             <h1></h1>
