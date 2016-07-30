@@ -116,12 +116,9 @@ body {
 }
 
 .ground {
-    background: url(../img/city.png) no-repeat left top;
     position: relative;
-    height: 569px;
-    width: 320px;
-    padding-left: -5000px;
-    padding-top: inherit;
+    height: 100%px;
+    width: 100%px;
 }
 
 h1 {
