@@ -13,9 +13,9 @@ $sql = new \sqlfunctions\sqlfunctions();
 
 $result = $sql->select($table,$where);
 
-if ($result != 'NULL') {
-    return true;
+if ($result) {
+    $identifire = $result[8];
+    echo $identifire;
 } else {
-    return false;
+    echo 'false';
 }
-?>

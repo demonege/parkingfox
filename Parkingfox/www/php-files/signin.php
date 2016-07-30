@@ -2,19 +2,26 @@
 header('Access-Control-Allow-Origin: *');
 
 require('sql.php');
-session_start();
+$sql = new \sqlfunctions\sqlfunctions();
 
 $datas = $_GET;
 
 $datas['password'] = md5($datas['password']);
 
 $datas['add_date'] = time();
-$datas['session'] = session_id();
+$datas['identifire'] = $sql->generateRandomString();
 
 $table = 'user';
 
-$sql = new \sqlfunctions\sqlfunctions();
 
-$sql->insert($datas,$table);
-
-?>
+$result = $sql->insert($datas,$table);
+if($result)
+{
+    $where['email'] = $datas['email'];
+    $identifire = $sql->select($table,$where,'identifire');
+    echo($identifire[0]);
+}
+else
+{
+    echo 'false';
+}

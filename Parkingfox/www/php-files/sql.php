@@ -24,7 +24,7 @@ class sqlfunctions
     {
         $db = $this->connect();
 
-        if($colums != '*')
+        if(!is_string($colums))
         {
             $column = '';
             foreach($colums as $key => $value)
@@ -71,10 +71,6 @@ class sqlfunctions
 
         //myreal escapre string weiter untersuchen
         $result = $db->query($query);
-
-
-        var_dump($result); //debug
-
         return $result;
     }
 
@@ -89,5 +85,9 @@ class sqlfunctions
         $where = substr($where, 0, -5);
 
         return $where;
+    }
+
+    function generateRandomString() {
+        return openssl_random_pseudo_bytes(8);
     }
 }
