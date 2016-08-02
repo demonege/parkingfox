@@ -7,73 +7,48 @@
     <!-- Include the jQuery library -->
     <script src="../www/js/jquery-1.11.3.min.js"></script>
     <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../www/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/application.css" />
     <title>Access Side</title>
     <script type="text/javascript">
-        $(document).on("pagecreate", "#pageone", function () {  
-            $("#mainContent").on("swiperight", function () {
+        $(document).on("pagecreate", "#pageone", function () {
+            $("div").on("swiperight", function () {
                 app.openNav();
-                alert("tzz");
             });
-            $("#mainContent").on("swipe", function () {
+            $("div").on("swipe", function () {
                 app.closeNav();
             });
         });
     </script>
-<script>
-    var value = 1;
-    $(document).ready(function () {
-        $("#bLogin").click(function () {
-            if (value == 1) {
-                $("#bLogin").text("Logout");
-                value = 0;
-            }
-            else {
-                $("#bLogin").text("Login");
-                value = 1;
-                alert("suck");
-            }
-        });
-    });
-</script>
 </head>
 <body>
     <!-- Mainpage -->
-    <div data-role="page" id="pageone" class="pageone">
-        <!--HEADER-->
+    <div data-role="page" id="pageone" class="pagesearch">
         <div data-role="header" data-position="fixed">
             <br />
             <h1>Parkingfox</h1>
-            <!--<a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>-->
+            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
             <a href="#Login" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Login</a>
             <div data-role="popup" id="Login" data-position-to="window" class="ui-content">
                 <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                 <h1>Bitte Loggen sie sich ein</h1>
                 <label>Name:</label><input type="text" />
                 <label>Passwort:</label><input type="password" />
-                <label for="log">Keep me logged in</label>
-                <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-                <button type="submit" onclick="app.test(value)" id="bLogin">Login</button><a href="#pageRegister">Jetzt regestrieren !</a>
+                <button type="submit">Anmelden</button><a href="#pageRegister">Jetzt regestrieren !</a>
             </div>
         </div>
-        <!--MAIN-->
-        <div data-role="main" class="ui-content" id="mainContent">
-            <a href="../www/seach.html" class="ui-btn ui-corner-all ui-shadow ui-icon-search ui-btn-icon-left searchbutton searchbuttonimg" data-transition="slide">Parkplatz finden</a>
-            <a href="../www/create.html" class="ui-btn ui-corner-all ui-shadow ui-icon-edit ui-btn-icon-left createbutton createbuttonimg" data-transition="slide">Parkplatz anbieten</a>
+
+        <div data-role="main" class="ui-content">
+            <label for="search">Search:</label>
+            <input type="search" name="findLocation" id="location" placeholder="Ort auswählen">
+            <label for="bday">Von:</label>
+            <input type="date" name="bday" id="vonDate">
+            <label for="bday">Bis:</label>
+            <input type="date" name="bday" id="bisDate">
             <script type="text/javascript" src="js/index.js"></script>
             <script type="text/javascript">app.initialize()</script>
         </div>
-        <!--FOOTER-->
-        <div data-role="footer" data-position="fixed" data-fullscreen="false">
-            <a href="#Wip" data-rel="popup" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-left">Was ist Parkingfox?</a>
-            <div data-role="popup" id="Wip" data-position-to="window" class="ui-content">
-                <video width="250" controls>
-                    <source src="../www/img/mov_bbb.mp4" type="video/mp4">
-                    <source src="../www/img/mov_bbb.ogg" type="video/ogg">
-                    Your browser does not support HTML5 video.
-                </video>
-            </div>
+        <div data-role="footer" data-position="fixed" data-fullscreen="true">
+            <h1></h1>
         </div>
     </div>
     <!--Sidenavigationbar-->

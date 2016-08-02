@@ -42,7 +42,5 @@ var app = {
         document.getElementById("pageone").style.marginLeft = "0";
         document.body.style.backgroundColor = "white";
     }
-
-    
     };
 

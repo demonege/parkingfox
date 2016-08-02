@@ -1,4 +1,4 @@
-.pageone
+.pagesearch
 {
     * {
         -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
@@ -36,8 +36,8 @@
     top: 17%;
 
     }
-    .h1 {
-        font-size:80px;
+    h1 {
+        font-size:24px;
         color: black;
         font-weight:normal;
         margin:0px;
@@ -63,72 +63,30 @@
         margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
     }
-    .searchbutton{
+    searchbutton{
+        background-color: #000000;  
         border: none;
         color: #ffffff;
-        font-size: 14px;
-        padding: 20% 33%;
+        padding: 15px 34px;
         width: 125px;
         border-radius: 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
         position: center;
-        text-align: left;
-        margin-top: 25%;
     }
-    .searchbuttonimg{
-        background-image:url(../img/parkinglot.png);
-        -webkit-filter: opacity(80%);
-        filter: opacity(80%);
-    }
-    .createbutton{
-        border: none;
-        padding: 20% 33%;
-        color: #ffffff;
-        width: 125px;
-        border-radius: 24px;
-        font-size: 14px;
-        position: center;
-        margin-top: 25%;
-        text-align: left;
-    }
-    .createbuttonimg{
-        background-image:url(../img/parkinglot.png);
-        -webkit-filter: opacity(80%);
-        filter: opacity(80%);
-     }
-@media only screen and (min-device-width: 400px)
-{ 
-    .createbutton{
-        border: none;
-        padding: 20% 41%;
-        color: #ffffff;
-        width: 125px;
-        border-radius: 24px;
-        font-size: 14px;
-        position: center;
-        margin-top: 25%;
-        text-align: left;
-    }
-    .createbuttonimg{
-        background-image:url(../img/parkinglot.png);
-        -webkit-filter: opacity(80%);
-        filter: opacity(80%);
-    }
-        .searchbutton{
+    createbutton{
+        background-color: #000000;  
         border: none;
         color: #ffffff;
-        font-size: 14px;
-        padding: 20% 41%;
+        padding: 15px 34px;
         width: 125px;
         border-radius: 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
         position: center;
-        text-align: left;
-        margin-top: 25%;
     }
-    .searchbuttonimg{
-        background-image:url(../img/roadsearch.png);
-        -webkit-filter: opacity(80%);
-        filter: opacity(80%);
-    }
-}
-
 }
