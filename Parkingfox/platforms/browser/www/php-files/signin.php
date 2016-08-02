@@ -18,8 +18,8 @@ $result = $sql->insert($datas,$table);
 if($result)
 {
     $where['email'] = $datas['email'];
-    $uid = $sql->select($table,$where,'identifire');
-    echo($uid[0]);
+    $identifire = $sql->select($table,$where,'identifire');
+    echo($identifire[0]);
 }
 else
 {

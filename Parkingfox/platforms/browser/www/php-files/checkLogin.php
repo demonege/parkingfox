@@ -5,7 +5,6 @@ require('sql.php');
 $sql = new \sqlfunctions\sqlfunctions();
 
 $datas = $_GET;
-var_dump($datas);
 
 $table = 'user';
 
