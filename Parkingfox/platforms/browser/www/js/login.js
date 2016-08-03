@@ -2,15 +2,16 @@ var url = 'http://192.168.0.11/php-files/signin.php';
 var url1 = 'http://192.168.0.11/php-files/login.php';
 var url2 = 'http://192.168.0.11/php-files/checkLogin.php';
 var data = '?lastname=Langlitz&firstname=Maurice&email=demonege@web.de&password=test1337'; // dynamisch aus formular
-var data1 = '?email=demonege@web.de&password=test1337'; // dynamisch aus formular
+var data1 = '?email=demonee@web.de&password=test1337'; // dynamisch aus formular
 
 var signin = url + data;
 var login = url1 + data1;
 //var parking = url2 + data2;
 
-document.getElementById("login-test").onclick = function() {CallService(login,document.getElementById("login-box"),true)};
-document.getElementById("login-test1").onclick = function() {CallService(signin,document.getElementById("login-box"),true)};
-document.getElementById("login-test3").onclick = function() {checkIfLogin(false)};
+//document.getElementById("login-test").onclick = function() {CallService(login,document.getElementById("login-box"),true)};
+//document.getElementById("login-test1").onclick = function() {CallService(signin,document.getElementById("login-box"),true)};
+//document.getElementById("login-test3").onclick = function() {checkIfLogin(false)};
+document.getElementById("login-btn").onclick = function() {CallService(login,document.getElementById("repsonse"),true)};
 //document.getElementById("login-test2").onclick = function() {CallService(parking,document.getElementById("parking"))};
 
 //END DEBUG
@@ -34,11 +35,12 @@ function CallService(url,responseElement,islogin)
             if(response != 'false' && islogin)
             {
                 setStorageItem(response);
+
             }
-            if(response != 'false' && !islogin) {
-                responseElement.innerHTML = 'true';
-            } else {
-                responseElement.innerHTML = 'false';
+            else
+            {
+                responseElement.style.display = "block";
+                responseElement.innerHTML = 'Ihr Passwort oder der Benutzername sind falsch bitte überprüfen sie ihre angaben';
             }
         }
     };
@@ -60,9 +62,6 @@ function setStorageItem(uid)
 {
     window.localStorage.setItem("login", "true");
     window.localStorage.setItem("uid", uid);
-
-    alert(window.localStorage.getItem("login"));
-    alert(window.localStorage.getItem("uid"));
 }
 
 function checkIfLogin(cookie)

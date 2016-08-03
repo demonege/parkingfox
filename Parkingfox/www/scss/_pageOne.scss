@@ -64,4 +64,23 @@
                                    /* offset horizontal: half of text area width */
     }
 
+    #repsonse
+    {
+      color: white;
+      margin: 0 auto;
+      padding: 20px;
+      display:none;
+      width: 80%;
+      height: auto;
+    }
+
+    .error
+    {
+      background-color: red;
+    }
+    .success
+    {
+      background-color: green;
+    }
+
 }
