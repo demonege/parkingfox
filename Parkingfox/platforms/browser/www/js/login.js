@@ -1,17 +1,16 @@
-var url = 'http://192.168.0.11/php-files/signin.php';
-var url1 = 'http://192.168.0.11/php-files/login.php';
-var url2 = 'http://192.168.0.11/php-files/checkLogin.php';
+var siginScript = 'http://192.168.0.11/php-files/signin.php';
+var loginScript = 'http://192.168.0.11/php-files/login.php';
+var checkLoginScript = 'http://192.168.0.11/php-files/checkLogin.php';
 var data = '?lastname=Langlitz&firstname=Maurice&email=demonege@web.de&password=test1337'; // dynamisch aus formular
-var data1 = '?email=demonee@web.de&password=test1337'; // dynamisch aus formular
 
-var signin = url + data;
-var login = url1 + data1;
+
+//var signin = url + data;
 //var parking = url2 + data2;
 
 //document.getElementById("login-test").onclick = function() {CallService(login,document.getElementById("login-box"),true)};
 //document.getElementById("login-test1").onclick = function() {CallService(signin,document.getElementById("login-box"),true)};
 //document.getElementById("login-test3").onclick = function() {checkIfLogin(false)};
-document.getElementById("login-btn").onclick = function() {CallService(login,document.getElementById("repsonse"),true)};
+document.getElementById("login-btn").onclick = function() {startlogin()};
 //document.getElementById("login-test2").onclick = function() {CallService(parking,document.getElementById("parking"))};
 
 //END DEBUG
@@ -35,11 +34,15 @@ function CallService(url,responseElement,islogin)
             if(response != 'false' && islogin)
             {
                 setStorageItem(response);
-
+                responseElement.style.display = "block";
+                responseElement.className = "success";
+                responseElement.innerHTML = 'Login erfolgreich';
+                setTimeout(function(){ document.getElementById("Login").style.display = "none"; }, 1500);
             }
             else
             {
                 responseElement.style.display = "block";
+                responseElement.className = "error";
                 responseElement.innerHTML = 'Ihr Passwort oder der Benutzername sind falsch bitte überprüfen sie ihre angaben';
             }
         }
@@ -81,7 +84,6 @@ function checkIfLogin(cookie)
         var login = window.localStorage.getItem("login");
         var uid = window.localStorage.getItem("uid");
 
-        //anpassungen prüfen des zweiten stroafe objects
         if(login == 'true')
         {
             return true;
@@ -96,4 +98,17 @@ function islogin()
     var data2 = '?identifire=' + uid;
     var service = url2 + data2;
     CallService(service,document.getElementById("identifire"),false);
+}
+
+function startlogin()
+{
+    var name = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+
+    console.log(name);
+    console.log(password);
+
+    var url = loginScript + '?email=' + name + '&password=' + password;
+
+    CallService(url,document.getElementById("repsonse"),true)
 }

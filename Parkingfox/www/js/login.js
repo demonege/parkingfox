@@ -1,10 +1,10 @@
-var siginScript = 'http://192.168.0.11/php-files/signin.php';
-var loginScript = 'http://192.168.0.11/php-files/login.php';
-var checkLoginScript = 'http://192.168.0.11/php-files/checkLogin.php';
+var siginScript = 'http://www.parkingfox.de/php-files/signin.php';
+var loginScript = 'http://www.parkingfox.de/php-files/login.php';
+var checkLoginScript = 'http://www.parkingfox.de/php-files/checkLogin.php';
 var data = '?lastname=Langlitz&firstname=Maurice&email=demonege@web.de&password=test1337'; // dynamisch aus formular
 
 
-//var signin = url + data;
+//var signin = siginScript + data;
 //var parking = url2 + data2;
 
 //document.getElementById("login-test").onclick = function() {CallService(login,document.getElementById("login-box"),true)};
@@ -104,10 +104,6 @@ function startlogin()
 {
     var name = document.getElementById("name").value;
     var password = document.getElementById("password").value;
-
-    console.log(name);
-    console.log(password);
-
     var url = loginScript + '?email=' + name + '&password=' + password;
 
     CallService(url,document.getElementById("repsonse"),true)

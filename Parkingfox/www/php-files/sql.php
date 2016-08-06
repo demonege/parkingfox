@@ -6,10 +6,10 @@ class sqlfunctions
 {
     private function connect()
     {
-        $db = new \mysqli("localhost", "root", "", "parkingfox");
+        $db = new \mysqli("wp149", "db12667619-root", "itrlgvpZi7ly0lEL", "db12667619-parkingfox");
         if($db->connect_errno)
         {
-            echo 'Verbindung fehlgeschlagen bitte versuchen sie es später nocheinmal';
+           exit("false");
         }
 
         return $db;
