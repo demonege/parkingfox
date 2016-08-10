@@ -102,6 +102,7 @@ function islogin()
 
 function startlogin()
 {
+    console.log('test');
     var name = document.getElementById("name").value;
     var password = document.getElementById("password").value;
     var url = loginScript + '?email=' + name + '&password=' + password;
