@@ -48,7 +48,7 @@ function CallService(url,responseElement,islogin)
     xhttp.send();
 }
 
-function CallService(url,responseElement,islogin)
+function CallSiginService(url,responseElement,islogin)
 {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -59,8 +59,8 @@ function CallService(url,responseElement,islogin)
                 setStorageItem(response);
                 responseElement.style.display = "block";
                 responseElement.className = "success";
-                responseElement.innerHTML = 'herzlichen glückwunsch sie sind nun angemeldet';
-                setTimeout(function(){window.location="index.html"}, 1500);
+                responseElement.innerHTML = 'registrierung Erfolgreich';
+                setTimeout(function(){window.location="index.html"}, 2000);
             }
             else
             {
@@ -142,7 +142,5 @@ function startSigin()
 
     var url = siginScript  + '?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&password=' + password + '&handynumber=' + handynumber;
 
-    alert(url);
-
-    CallService(url,document.getElementById("sigin-response"),true)
+    CallSiginService(url,document.getElementById("sigin-response"),true)
 }

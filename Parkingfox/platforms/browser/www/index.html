@@ -5,8 +5,8 @@
     <!-- Include jQuery Mobile stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- Include the jQuery library -->
-    <script src="../www/js/jquery-1.11.3.min.js"></script>
-    <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/application.css" />
     <title>Access Side</title>
     <script type="text/javascript">
@@ -106,22 +106,23 @@
         <div data-role="main">
 
             <br />
+            <div id="sigin-response"></div>
             <div class="registerFont">Vorname:</div>            
-            <input type="text" name="firstname">
+            <input id="firstname" type="text" name="firstname">
             
             <div class="registerFont">Nachname*:</div>            
-            <input type="text" name="lastname">
+            <input id="lastname" type="text" name="lastname">
             
             <div class="registerFont">Email:</div>            
-            <input type="text" name="email">
+            <input id="email" type="text" name="email">
             
             <div class="registerFont">Handynummer*:</div>           
-            <input type="text" name="phonenumber">
+            <input id="phonenumber" type="text" name="phonenumber">
             
             <div class="registerFont">Passwort:</div>           
-            <input type="password" name="password">
+            <input id="sigin-password" type="password" name="password">
             <br />
-            <div><button type="submit">Jetzt Anmelden !</button></div>
+            <div><button id="sigin-btn" type="submit">Jetzt Anmelden !</button></div>
 
         </div>
 
@@ -178,6 +179,6 @@
             </div>
         </div>
     </div>
-    <script src="../www/js/login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
