@@ -1,4 +1,4 @@
-.pagetwo
+.pagecreate
 {
     * {
         -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
@@ -28,6 +28,14 @@
         text-transform:uppercase;
         width:100%;
     }
+    .parkingfox {
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    left: 26%;
+    top: 17%;
+
+    }
     h1 {
         font-size:24px;
         color: black;
@@ -55,7 +63,7 @@
         margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
     }
-    .buttonsidebar {
+    searchbutton{
         background-color: #000000;  
         border: none;
         color: #ffffff;
@@ -66,42 +74,19 @@
         text-decoration: none;
         display: inline-block;
         font-size: 25px;
+        position: center;
     }
-    .buttonsidebar:active {
-        color: #000000;
-        background-color: whitesmoke;
-        box-shadow: 0 1px #666;
-        transform: translateY(4px);
-    }
-
-    /* The side navigation menu */
-    .sidenav {
-        height: 100%; /* 100% Full-height */
-        width: 0; /* 0 width - change this with JavaScript */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Stay on top */
-        top: 0;
-        left: 0;
-        background: #f1f1f1;/*url(../img/city.png) no-repeat left top;  Black*/
-        overflow-x: hidden; /* Disable horizontal scroll */
-        padding-top: 60px; /* Place content 60px from the top */
-        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-
-    }
-
-
-    /* Position and style the close button (top right corner) */
-    .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px !important;
-        margin-left: 50px;
-    }
-
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-    #main {
-        transition: margin-left .5s;
-        padding: 20px;
+    createbutton{
+        background-color: #000000;  
+        border: none;
+        color: #ffffff;
+        padding: 15px 34px;
+        width: 125px;
+        border-radius: 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        position: center;
     }
 }
