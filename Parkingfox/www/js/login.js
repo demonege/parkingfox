@@ -11,6 +11,7 @@ var data = '?lastname=Langlitz&firstname=Maurice&email=demonege@web.de&password=
 //document.getElementById("login-test1").onclick = function() {CallService(signin,document.getElementById("login-box"),true)};
 //document.getElementById("login-test3").onclick = function() {checkIfLogin(false)};
 document.getElementById("login-btn").onclick = function() {startlogin()};
+document.getElementById("sigin-btn").onclick = function() {startSigin()};
 //document.getElementById("login-test2").onclick = function() {CallService(parking,document.getElementById("parking"))};
 
 //END DEBUG
@@ -18,11 +19,7 @@ document.getElementById("login-btn").onclick = function() {startlogin()};
 
 //on document load test
 
-if(checkIfLogin(false)) {
-    console.log(true);
-} else {
-    console.log(false)
-}
+if(checkIfLogin(false)) {} else {}
 
 
 function CallService(url,responseElement,islogin)
@@ -44,6 +41,32 @@ function CallService(url,responseElement,islogin)
                 responseElement.style.display = "block";
                 responseElement.className = "error";
                 responseElement.innerHTML = 'Ihr Passwort oder der Benutzername sind falsch bitte überprüfen sie ihre angaben';
+            }
+        }
+    };
+    xhttp.open("POST", url, true);
+    xhttp.send();
+}
+
+function CallService(url,responseElement,islogin)
+{
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var response = xhttp.response;
+            if(response != 'false' && islogin)
+            {
+                setStorageItem(response);
+                responseElement.style.display = "block";
+                responseElement.className = "success";
+                responseElement.innerHTML = 'herzlichen glückwunsch sie sind nun angemeldet';
+                setTimeout(function(){window.location="index.html"}, 1500);
+            }
+            else
+            {
+                responseElement.style.display = "block";
+                responseElement.className = "error";
+                responseElement.innerHTML = 'Ein fehler ist aufgetretten bitte überprüfen sie ihre angaben';
             }
         }
     };
@@ -102,10 +125,24 @@ function islogin()
 
 function startlogin()
 {
-    console.log('test');
     var name = document.getElementById("name").value;
     var password = document.getElementById("password").value;
     var url = loginScript + '?email=' + name + '&password=' + password;
 
     CallService(url,document.getElementById("repsonse"),true)
+}
+
+function startSigin()
+{
+        var firstname = document.getElementById("firstname").value;
+        var lastname = document.getElementById("lastname").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("sigin-password").value;
+        var handynumber = document.getElementById("phonenumber").value;
+
+    var url = siginScript  + '?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&password=' + password + '&handynumber=' + handynumber;
+
+    alert(url);
+
+    CallService(url,document.getElementById("sigin-response"),true)
 }
