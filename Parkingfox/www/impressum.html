@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Include the jQuery library -->
+    <script src="../www/js/jquery-1.11.3.min.js"></script>
+    <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/application.css" />
+    <title>Impressum</title>
+    <script type="text/javascript">
+        $(document).on("pagecreate", "#pageone", function () {
+            $("div").on("swiperight", function () {
+                app.openNav();
+            });
+            $("div").on("swipe", function () {
+                app.closeNav();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="pageFour">
+        <div data-role="header" data-position="fixed">
+            <h1>Impressum</h1>
+            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
+        </div>
+        <div data-role="main">
+            </br>
+            Impressum
+            </br> 
+            </br>   
+            Anbieter:
+            </br>
+            </br>
+            Max Mustermann
+            </br>
+            Musterstraße 12
+            </br>
+            12345 Berlin
+            </br>
+            </br>
+            Kontakt:
+            </br>
+            </br>
+            Telefon: 030/12345678
+            </br>
+            Telefax: 030/12345679
+            </br>
+            e-Mail: e-Mail@mustermann.de
+            </br>
+            Website: www.mustermann.de
+            </br>
+            </br>
+            ##Bei redaktionellen Inhalten zusätzlich:##
+            </br>
+            </br>
+            Verantwortlich nach § 6 Abs.2 MDStV
+            </br>
+            </br>
+            De Onkel vom Enes halt....
+            </br>
+            Redakteur „Hardware und Software“
+            </br>
+            Ahornallee 1
+            </br>
+            12345 Berlin
+            </br>
+            </br>
+            ##folgendes muss erwähnt werden, aber nur wenn vorhanden##
+            </br>
+            </br>
+            Registergericht: AG Berlin
+            </br>
+            HRB-Nummer: 54321
+            </br>
+            Umsatzsteueridentifikationsnummer: 123456789
+            </br>
+            Nennung des vertretungsberechtigten Geschäftsführer einer GmbH
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="footer" data-position="fixed">
+            <a href="#info2" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Hilfe?</a>
+                <div data-role="popup" id="info2" data-position-to="window" class="ui-content">
+                    <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <h1>Blabla Impressum</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Sidenavigationbar-->
+    <div data-role="navbar" id="pagetwo" class="pagetwo">
+        <div data-role="header">
+            <h1></h1>
+        </div>
+    <div data-role="main" class="ui-content">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="app.closeNav()">&times;</a>
+                <a href="../www/pageThree.html" class="buttonsidebar" >Über Uns</a><br /><br />
+                <a href="../www/pageFour.html" class="buttonsidebar">Dienste</a><br /><br />
+                <a href="../www/pageFour.html" class="buttonsidebar">Dienste</a><br /><br />
+                <a href="../www/profil.html" class="buttonsidebar">Profil</a><br /><br />
+                <a href="../www/kontakt.html" class="buttonsidebar">Kontakt</a><br /><br />
+                <a href="../www/impressum.html" class="buttonsidebar">Impressum</a>
+            </div>
+     </div>
+     <div data-role="footer">
+            <h1></h1>
+        </div>
+    </div>
+</body>
+</html>

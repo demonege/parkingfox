@@ -52,7 +52,7 @@
                 <label>Passwort:</label><input id="password" type="password" />
                 <label for="log">Keep me logged in</label>
                 <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-                <button id="login-btn" type="submit">Anmelden</button><a href="#pageRegister">Jetzt regestrieren !</a>
+                <button id="login-btn" type="submit">Anmelden</button><a href="../www/register.html">Jetzt regestrieren !</a>
             </div>
         </div>
 
@@ -75,6 +75,7 @@
             </div>
         </div>
     </div>
+    
     <!--Sidenavigationbar-->
     <div data-role="navbar" id="pagetwo" class="pagetwo">
         <div data-role="header">
@@ -83,12 +84,12 @@
     <div data-role="main" class="ui-content">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="app.closeNav()">&times;</a>
-                <a href="#pageThree" class="buttonsidebar" >Über Uns</a><br /><br />
-                <a href="#pageThree" class="buttonsidebar">Dienste</a><br /><br />
-                <a href="#pageFour" class="buttonsidebar">Dienste</a><br /><br />
-                <button class="buttonsidebar">Profil</button><br /><br />
-                <button class="buttonsidebar">Kontakt</button><br /><br />
-                <button class="buttonsidebar">Impressum</button>
+                <a href="../www/pageThree.html" class="buttonsidebar" >Über Uns</a><br /><br />
+                <a href="../www/pageFour.html" class="buttonsidebar">Dienste</a><br /><br />
+                <a href="../www/pageFour.html" class="buttonsidebar">Dienste</a><br /><br />
+                <a href="../www/profil.html" class="buttonsidebar">Profil</a><br /><br />
+                <a href="../www/kontakt.html" class="buttonsidebar">Kontakt</a><br /><br />
+                <a href="../www/impressum.html" class="buttonsidebar">Impressum</a>
             </div>
      </div>
      <div data-role="footer">
@@ -96,89 +97,6 @@
         </div>
     </div>
 
-    <!--Register page-->
-    <div data-role="page" id="pageRegister" class="pageRegister">
-        <div data-role="header" data-position="fixed">
-            <h1>Registrieren</h1>
-            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
-        </div>
-
-        <div data-role="main">
-
-            <br />
-            <div id="sigin-response"></div>
-            <div class="registerFont">Vorname:</div>            
-            <input id="firstname" type="text" name="firstname">
-            
-            <div class="registerFont">Nachname*:</div>            
-            <input id="lastname" type="text" name="lastname">
-            
-            <div class="registerFont">Email:</div>            
-            <input id="email" type="text" name="email">
-            
-            <div class="registerFont">Handynummer*:</div>           
-            <input id="phonenumber" type="text" name="phonenumber">
-            
-            <div class="registerFont">Passwort:</div>           
-            <input id="sigin-password" type="password" name="password">
-            <br />
-            <div><button id="sigin-btn" type="submit">Jetzt Anmelden !</button></div>
-
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <a href="#info" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Hilfe?</a>
-            <div data-role="popup" id="info" data-position-to="window" class="ui-content">
-                <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                <h1>Um zu gewährleisten, dass die Vermittlung reibungslos funktioniert, geben sie bitte Ihre Persönlichen Daten ein.</h1>
-                <br />
-                <h1>*Optionale Angaben</h1>
-            </div>
-
-        </div>        
-    </div>
-
-    <!--Page three-->
-   <div data-role="page" id="pageThree">
-        <div data-role="header" data-position="fixed">
-            <h1>Über Parkingfox</h1>
-            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
-        </div>
-        <div data-role="main">
-
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <a href="#Wip2" data-rel="popup" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-left">Was ist Parkingfox?</a>
-            <div data-role="popup" id="Wip2" data-position-to="window" class="ui-content">
-                <video width="250" controls>
-                    <source src="../www/img/mov_bbb.mp4" type="video/mp4">
-                    <source src="../www/img/mov_bbb.ogg" type="video/ogg">
-                    Your browser does not support HTML5 video.
-                </video>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <!--Page four-->
-    <div data-role="page" id="pageFour">
-        <div data-role="header" data-position="fixed">
-            <h1>Dienste</h1>
-            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
-        </div>
-        <div data-role="main">
-            
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="footer" data-position="fixed">
-            <a href="#info2" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Hilfe?</a>
-                <div data-role="popup" id="info2" data-position-to="window" class="ui-content">
-                    <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                    <h1>Jungs! ich hab null Ahnung was ihr mit verfickten Diensten meint?</h1>
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="js/login.js"></script>
 </body>
 </html>

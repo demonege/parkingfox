@@ -8,5 +8,4 @@ $subject = $datas['subject'];
 $message = $datas['message'];
 
 mail($receiver,$subject,$message);
-
 ?>

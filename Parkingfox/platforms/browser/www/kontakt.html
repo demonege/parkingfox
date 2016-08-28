@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <script src="../www/js/jquery-1.11.3.min.js"></script>
     <script src="../www/js/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/application.css" />
-    <title>Access Side</title>
+    <title>Kontakt</title>
     <script type="text/javascript">
         $(document).on("pagecreate", "#pageone", function () {
             $("div").on("swiperight", function () {
@@ -21,37 +21,32 @@
     </script>
 </head>
 <body>
-    <!-- Mainpage -->
-    <div data-role="page" id="pageone" class="pagesearch">
+    <div data-role="page" id="pageFour">
         <div data-role="header" data-position="fixed">
-            <br />
-            <h1>Parkingfox</h1>
+            <h1>Kontaktdaten</h1>
             <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
-            <a href="#Login" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Login</a>
-            <div data-role="popup" id="Login" data-position-to="window" class="ui-content">
-                <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                <h1>Bitte Loggen sie sich ein</h1>
-                <label>Name:</label><input type="text" />
-                <label>Passwort:</label><input type="password" />
-                <button type="submit">Anmelden</button><a href="#pageRegister">Jetzt regestrieren !</a>
+        </div>
+        <div data-role="main">
+        </br>
+            Senden sie Uns ihre Nachricht im handumdrehen per E-Mail, unser
+            Serviceteam wird sich schon bald darum kümmern.
+        </br>
+        </br>
+            <div class="registerFont">Email:</div>            
+            <textarea></textarea>
+            <div><button id="send-btn" type="submit">Senden</button></div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="footer" data-position="fixed">
+            <a href="#info2" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Hilfe?</a>
+                <div data-role="popup" id="info2" data-position-to="window" class="ui-content">
+                    <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <h1>Blabla Parkingfox</h1>
+                </div>
             </div>
         </div>
-
-        <div data-role="main" class="ui-content">
-            <label for="search">Search:</label>
-            <input type="search" name="findLocation" id="location" placeholder="Ort auswählen">
-            <label for="bday">Von:</label>
-            <input type="date" name="bday" id="vonDate">
-            <label for="bday">Bis:</label>
-            <input type="date" name="bday" id="bisDate">
-            <script type="text/javascript" src="js/index.js"></script>
-            <script type="text/javascript">app.initialize()</script>
-        </div>
-        <div data-role="footer" data-position="fixed" data-fullscreen="true">
-            <h1></h1>
-        </div>
     </div>
-    
+
     <!--Sidenavigationbar-->
     <div data-role="navbar" id="pagetwo" class="pagetwo">
         <div data-role="header">

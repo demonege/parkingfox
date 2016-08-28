@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Include jQuery Mobile stylesheets -->
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+     <!-- Include the jQuery library -->
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <script src="js/jquery.mobile-1.4.5.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/application.css" />
+     <title>Register Side</title>
+     
+     <script type="text/javascript">
+         $(document).on("pagecreate", "#pageone", function () {  
+             $("#mainContent").on("swiperight", function () {
+                 app.openNav();
+             });
+             $("#mainContent").on("swipe", function () {
+                 app.closeNav();
+             });
+         });
+     </script>
+     <script>
+     var value = 1;
+     $(document).ready(function () {
+         $("#bLogin").click(function () {
+              if (value == 1) {
+                 $("#bLogin").text("Logout");
+                 value = 0;
+             }
+             else {
+                 $("#bLogin").text("Login");
+                 value = 1;
+             }
+         });
+     });
+     </script>
+     
+ </head>
+ <body>
+   <div data-role="page" id="pageRegister" class="pageRegister">
+        <div data-role="header" data-position="fixed">
+            <h1>Registrieren</h1>
+            <a href="#pageone" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">HOME</a>
+        </div>
+
+        <div data-role="main">
+
+            <br />
+            <div id="sigin-response"></div>
+            <div class="registerFont">Vorname:</div>            
+            <input id="firstname" type="text" name="firstname">
+            
+            <div class="registerFont">Nachname*:</div>            
+            <input id="lastname" type="text" name="lastname">
+            
+            <div class="registerFont">Email:</div>            
+            <input id="email" type="text" name="email">
+            
+            <div class="registerFont">Handynummer*:</div>           
+            <input id="phonenumber" type="text" name="phonenumber">
+            
+            <div class="registerFont">Passwort:</div>           
+            <input id="sigin-password" type="password" name="password">
+            <br />
+            <div><button id="sigin-btn" type="submit">Jetzt Anmelden !</button></div>
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <a href="#info" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Hilfe?</a>
+            <div data-role="popup" id="info" data-position-to="window" class="ui-content">
+                <a href="#" data-rel="back" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <h1>Um zu gewährleisten, dass die Vermittlung reibungslos funktioniert, geben sie bitte Ihre Persönlichen Daten ein.</h1>
+                <br />
+                <h1>*Optionale Angaben</h1>
+            </div>
+
+        </div>        
+    </div>  
+ </body>
+</html>
